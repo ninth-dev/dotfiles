@@ -1,0 +1,19 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"A File Icon",
+		"ayu",
+		"Babel",
+		"DocBlockr",
+		"Package Control",
+		"Pretty JSON",
+		"SqlBeautifier",
+		"SublimeLinter",
+		"Tomorrow Color Schemes",
+		"Trimmer"
+	]
+}
