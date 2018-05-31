@@ -13,7 +13,8 @@
 		"Pretty JSON",
 		"SqlBeautifier",
 		"SublimeLinter",
-		"Tomorrow Color Schemes",
-		"Trimmer"
+		"Trimmer", 
+		"Markdown Extended", 
+		"MarkdownEditing"
 	]
 }

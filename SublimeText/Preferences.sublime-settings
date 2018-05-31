@@ -15,5 +15,5 @@
     "tab_size" : 4,
     "trim_trailing_white_spaces_on_save" : true,
     "theme": "ayu-dark.sublime-theme",
-    "color_scheme": "Packages/Tomorrow Color Schemes/Tomorrow-Night-Eighties.tmTheme",
+    "color_scheme": "Packages/ayu/ayu-mirage.tmTheme"
 }
