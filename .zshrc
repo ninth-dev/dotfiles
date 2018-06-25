@@ -1,9 +1,26 @@
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.fzf-git ] && source ~/.fzf-git
-# Created by newuser for 5.5.1
+
+# ls colors 
+autoload -U colors && colors
+export LSCOLORS="Gxfxcxdxbxegedabagacad"
+
+# key bindings
+bindkey -M vicmd "^V" edit-command-line #vi mode
+
+# aliases
+[ -f ~/.aliases ] && source ~/.aliases
+
+# bash-my-aws
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+
+for f in ~/.bash-my-aws/lib/*-functions; do source $f; done
+source ~/.bash-my-aws/bash_completion.sh
+
+# zplugs 
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
-
 
 # plugins from oh-my-zsh
 zplug "lib/completion", from:oh-my-zsh
