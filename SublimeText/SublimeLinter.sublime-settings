@@ -1,0 +1,18 @@
+// put in ~/Library/Application Support/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings
+// SublimeLinter Settings - User
+{
+	"debug": false,
+	"linters": {
+	  "eslint": {
+	      "env": {
+	        "PATH": "~/.nvm/versions/node/v8.10.0/bin"
+	      }
+	  }
+	},
+	"paths": {
+		"osx": [
+			"~/.nvm/versions/node/v8.10.0/bin"
+		]
+	}
+}
+
