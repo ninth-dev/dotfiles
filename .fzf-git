@@ -6,7 +6,7 @@ is_in_git_repo() {
 }
 
 fzf_down() {
-  fzf --height 50% "$@" --border
+  fzf --height 100% "$@" --border
 }
 
 fzf_gf() {
@@ -76,4 +76,3 @@ bind-git-helper() {
 }
 bind-git-helper f b t r h
 unset -f bind-git-helper
-
