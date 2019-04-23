@@ -1,0 +1,32 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"A File Icon",
+		"AdvancedNewFile",
+		"ayu",
+		"CSS3",
+		"DocBlockr",
+		"Emmet",
+		"LSP",
+		"Naomi",
+		"Open With",
+		"Package Control",
+		"Pretty JSON",
+		"ProjectManager",
+		"Quick File Move",
+		"Rust Enhanced",
+		"RustFmt",
+		"Scala Syntax",
+		"SqlBeautifier",
+		"SublimeLinter",
+		"SublimeLinter-eslint",
+		"SublimeLinter-shellcheck",
+		"TOML",
+		"TrailingSpaces",
+		"Trimmer"
+	]
+}

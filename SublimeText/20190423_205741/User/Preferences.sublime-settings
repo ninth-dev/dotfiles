@@ -1,0 +1,39 @@
+{
+  "auto_close_tags": true,
+  "auto_complete": true,
+  "close_windows_when_empty": true,
+  "color_scheme": "Packages/ayu/ayu-mirage.sublime-color-scheme",
+  "detect_indentation": false,
+  "drag_text": false,
+  "draw_white_space": "all",
+  "fade_fold_buttons": false,
+  "font_face": "Consolas",
+  "font_size": 19,
+  "highlight_line": true,
+  "hightlight_modified_tabs": true,
+  "ignored_packages":
+  [
+    "JavaScript",
+    "Rust",
+    "Vintage"
+  ],
+  "line_padding_bottom": 6,
+  "line_padding_top": 6,
+  "open_with":
+  [
+    {
+      "command":
+      [
+        "open",
+        "-a",
+        "typora",
+        "{filename}"
+      ],
+      "name": "Typora"
+    }
+  ],
+  "scroll_past_end": true,
+  "tab_size": 2,
+  "theme": "ayu-mirage.sublime-theme",
+  "translate_tabs_to_spaces": true
+}
