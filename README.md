@@ -9,4 +9,6 @@
 ### To restore
 - copy folder to `Packages/User`
    
-## [Brew](./brew.md)
+## Brew
+- a [list](./brew.md) of apps to install
+
