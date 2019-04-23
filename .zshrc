@@ -10,7 +10,7 @@ export HISTSIZE=500000
 export HISTFILE="$HOME/.history"
 export SAVEHIST=$HISTSIZE
 
-setopt histreduceblanks histignorespace histignorealldups
+setopt histreduceblanks histignorespace histignorealldups hist_verify inc_append_history
 
 # auto-complete
 autoload -U compinit compdef && compinit
