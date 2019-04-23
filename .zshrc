@@ -1,10 +1,22 @@
 # aliases
 [ -f ~/.aliases ] && source ~/.aliases
 
-# bash-my-aws
-autoload -U +X compinit && compinit
-autoload -U +X bashcompinit && bashcompinit
+# zsh options
+setopt autocd
+setopt autopushd pushdignoredups
 
+# history
+export HISTSIZE=500000
+export HISTFILE="$HOME/.history"
+export SAVEHIST=$HISTSIZE
+
+setopt histreduceblanks histignorespace histignorealldups
+
+# auto-complete
+autoload -U compinit compdef && compinit
+autoload -U bashcompinit && bashcompinit
+
+# bash-my-aws
 for f in ~/.bash-my-aws/lib/*-functions; do source "$f"; done
 source ~/.bash-my-aws/bash_completion.sh
 
