@@ -1,9 +1,19 @@
+bindkey -v
+
 # aliases
 [ -f ~/.aliases ] && source ~/.aliases
 
 # zsh options
 setopt autocd
 setopt autopushd pushdignoredups
+setopt correct_all
+
+# nocorrect for certain commands
+alias cp='nocorrect cp'
+alias man='nocorrect man'
+alias mkdir='nocorrect mkdir'
+alias mv='nocorrect mv'
+alias sudo='nocorrect sudo'
 
 # history
 export HISTSIZE=500000
@@ -13,12 +23,13 @@ export SAVEHIST=$HISTSIZE
 setopt histreduceblanks histignorespace histignorealldups hist_verify inc_append_history
 
 # auto-complete
-autoload -U compinit compdef && compinit
-autoload -U bashcompinit && bashcompinit
+zstyle :compinstall filename "$HOME/.zshrc"
+autoload -Uz compinit && compinit
+autoload -Uz bashcompinit && bashcompinit
 
-# bash-my-aws
-for f in ~/.bash-my-aws/lib/*-functions; do source "$f"; done
-source ~/.bash-my-aws/bash_completion.sh
+# bash-my-aws 
+# for f in ~/.bash-my-aws/lib/*-functions; do source "$f"; done
+# source ~/.bash-my-aws/bash_completion.sh
 
 # zr - plugin manager
 if [[ ! -f ~/.zr/init.zsh ]] || [[ ~/.zshrc -nt ~/.zr/init.zsh ]]; then
