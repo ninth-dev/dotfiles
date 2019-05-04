@@ -1,5 +1,8 @@
 # dotfiles
 
+## Alacritty 
+- copy `alacritty.yml` to `~/.config/alacritty`
+
 ## Sublime Text 3
 
 ### To backup

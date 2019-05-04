@@ -1,4 +1,8 @@
+# vi mode 
+export TERM=alacritty
+
 bindkey -v
+export KEYTIMEOUT=1
 
 # aliases
 [ -f ~/.aliases ] && source ~/.aliases

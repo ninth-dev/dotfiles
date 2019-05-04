@@ -1,28 +1,38 @@
+
 # Brew
 
-Disable analytics
 
-```
-brew analytics off
-```
+XXX - automate how to install brew.... 
 
-```
-brew install git
-brew install zsh
-brew install bash-completions
-brew install bash
+
+```sh
+brew analytics off - # Disable analytics
+brew cask install alfred
 
 brew cask install sublime-merge
 brew cask install sublime-text
-brew cask install alfred
+
 brew cask install alacritty
 brew install tmux
+
+brew install git
+brew install bash # get the latest bash 
+echo '/usr/local/bin/bash' | sudo tee -a /etc/shells;
+brew install bash-completion@2 # get bash completions v2
+
+brew install zsh # get the latest zsh
+echo '/usr/local/bin/zsh' | sudo tee -a /etc/shells;
+chsh -s /usr/local/bin/zsh
+
+brew cask install homebrew/cask-versions/firefox-developer-edition
+brew cask install firefox
 
 brew install awscli
 brew install bat
 brew install fd
 brew install ripgrep
 brew install diff-so-fancy
+
 
 brew install shellcheck
 brew install jq
@@ -39,8 +49,6 @@ brew install vim
 
 brew cask install adobe-reader
 brew cask install brave
-brew cask install firefox
-brew cask install firefox-developer-edition
 brew cask install google-chrome
 brew cask install intellij-idea-ce
 brew cask install java
