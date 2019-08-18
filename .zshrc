@@ -1,7 +1,7 @@
-export TERM=alacritty
-
 # PATH
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+PATH="${PATH}:${HOME}/.bash-my-aws/bin"
+export PATH
 
 # homebrew settings
 export HOMEBREW_NO_ANALYTICS=1
@@ -25,6 +25,7 @@ source "${HOME}/zshrc.d/history.zsh"
 
 # zsh plugins
 source "${HOME}/zshrc.d/plugins/git.plugin.zsh"
+source "${HOME}/zshrc.d/plugins/zsh-you-should-use/you-should-use.plugin.zsh"
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
@@ -32,9 +33,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && source "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # bash-my-aws
-export PATH="${PATH}:${HOME}/.bash-my-aws/bin"
-source $HOME/.bash-my-aws/aliases
-source $HOME/.bash-my-aws/bash_completion.sh
+source "${HOME}/.bash-my-aws/aliases"
+source "${HOME}/.bash-my-aws/bash_completion.sh"
 
 # setup pure prompt
 autoload -U promptinit && promptinit
