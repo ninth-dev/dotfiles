@@ -20,6 +20,7 @@ autoload colors && colors
 
 source "${HOME}/zshrc.d/aliases.zsh"
 source "${HOME}/zshrc.d/completion.zsh"
+source "${HOME}/zshrc.d/function.zsh"
 source "${HOME}/zshrc.d/keybind.zsh"
 source "${HOME}/zshrc.d/history.zsh"
 
