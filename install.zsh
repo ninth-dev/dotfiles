@@ -21,6 +21,8 @@ rsync                                       \
   "${HOME}/.zshrc"
 
 # restart zsh
-exec zsh
-
+echo ""
+echo "====================================="
+echo "(:3｣∠)_ Time to restart you shell..."
+# TODO: need to find a more robust way to restart the shell
 
