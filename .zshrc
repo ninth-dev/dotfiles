@@ -18,6 +18,9 @@ setopt correct_all
 
 autoload colors && colors
 
+# completion paths
+[ -d "/usr/local/share/zsh-completions" ] && fpath=(/usr/local/share/zsh-completions $fpath)
+
 source "${HOME}/zshrc.d/aliases.zsh"
 source "${HOME}/zshrc.d/completion.zsh"
 source "${HOME}/zshrc.d/function.zsh"
@@ -36,6 +39,9 @@ export NVM_DIR="$HOME/.nvm"
 # bash-my-aws
 source "${HOME}/.bash-my-aws/aliases"
 source "${HOME}/.bash-my-aws/bash_completion.sh"
+
+# source any local setup if it exists
+[ -s "${HOME}/.zshrc.local" ] && source "${HOME}/.zshrc.local"
 
 # setup pure prompt
 autoload -U promptinit && promptinit
