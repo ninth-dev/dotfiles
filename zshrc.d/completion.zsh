@@ -1,9 +1,4 @@
-# Create cache folder for compdump etc.
-ZSH_CACHE="/tmp/.zsh-${USER}-${ZSH_VERSION}"
-mkdir -p $ZSH_CACHE
-chmod 700 $ZSH_CACHE
-
-WORDCHARS='*?_-[]~=&;!#$%^(){}<>'  # do not autoselect the first completion entry
+WORDCHARS=' '  
 
 unsetopt menu_complete
 unsetopt flowcontrol
@@ -13,9 +8,7 @@ setopt always_to_end
 
 zmodload -i zsh/complist
 autoload -U +X bashcompinit && bashcompinit
-autoload -Uz compaudit compinit
-
-compinit -d "$ZSH_CACHE/zcompdump"
+autoload -U +X compaudit compinit && compinit
 
 # Use caching
 zstyle ':completion::complete:*' use-cache 1
@@ -23,7 +16,7 @@ zstyle ':completion::complete:*' cache-path $ZSH_CACHE
 
 # Enable approximate completions
 zstyle ':completion:*' completer _complete _ignored _approximate
-zstyle -e ':completion:*:approximate:*' max-errors 'reply=($((($#PREFIX+$#SUFFIX)/3)) numeric)'
+zstyle -e ':completion:*:approximate:*' max-errors 'reply=($((($#PREFIX+$#SUFFIX)/1)) numeric)'
 
 # Automatically update PATH entries
 zstyle ':completion:*' rehash true
