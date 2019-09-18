@@ -34,11 +34,15 @@ brew install ripgrep
 
 brew install shellcheck
 brew install jq
-brew install sbt
 brew install tree
-brew install ammonite-repl
 brew install vim
 brew install diff-so-fancy
+
+# scala stuff
+brew install sbt
+brew install ammonite-repl
+brew tap coursier/formulas
+brew install coursier/formulas/coursier
 
 brew cask install adobe-reader
 brew cask install brave
