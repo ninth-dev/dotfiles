@@ -19,7 +19,6 @@ function git_current_branch() {
 # Back-compatibility wrapper for when this function was defined here in
 # the plugin, before being pulled in to core lib/git.zsh as git_current_branch()
 # to fix the core -> git plugin dependency.
-
 function current_branch() {
   git_current_branch
 }
@@ -56,7 +55,7 @@ alias gap='git apply'
 alias gb='git branch'
 alias gba='git branch -a'
 alias gbd='git branch -d'
-alias gbda='git branch --no-color --merged | command grep -vE "^(\*|\s*(master|develop|dev)\s*$)" | command xargs -n 1 git branch -d'
+alias gbda='git branch --no-color --merged | command grep -vE "^(\+|\*|\s*(master|develop|dev)\s*$)" | command xargs -n 1 git branch -d'
 alias gbD='git branch -D'
 alias gbl='git blame -b -w'
 alias gbnm='git branch --no-merged'
@@ -221,7 +220,9 @@ alias grm='git rm'
 alias grmc='git rm --cached'
 alias grmv='git remote rename'
 alias grrm='git remote remove'
+alias grs='git restore'
 alias grset='git remote set-url'
+alias grss='git restore --source'
 alias grt='cd "$(git rev-parse --show-toplevel || echo .)"'
 alias gru='git reset --'
 alias grup='git remote update'
@@ -250,10 +251,12 @@ alias gstp='git stash pop'
 alias gsts='git stash show --text'
 alias gstall='git stash --all'
 alias gsu='git submodule update'
+alias gsw='git switch'
+alias gswc='git switch -c'
 
 alias gts='git tag -s'
 alias gtv='git tag | sort -V'
-alias gtl='gtl(){ git tag --sort=-v:refname -n -l ${1}* }; noglob gtl'
+alias gtl='gtl(){ git tag --sort=-v:refname -n -l "${1}*" }; noglob gtl'
 
 alias gunignore='git update-index --no-assume-unchanged'
 alias gunwip='git log -n 1 | grep -q -c "\-\-wip\-\-" && git reset HEAD~1'
@@ -265,3 +268,4 @@ alias glum='git pull upstream master'
 
 alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
 alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign -m "--wip-- [skip ci]"'
+
