@@ -36,7 +36,7 @@ brew install shellcheck
 brew install jq
 brew install tree
 brew install vim
-brew install diff-so-fancy
+brew install git-delta
 
 # scala stuff
 brew install sbt
