@@ -29,6 +29,7 @@ source "${HOME}/zshrc.d/history.zsh"
 
 # zsh plugins
 source "${HOME}/zshrc.d/plugins/git.plugin.zsh"
+source "${HOME}/zshrc.d/plugins/skim.plugin.zsh"
 source "${HOME}/zshrc.d/plugins/zsh-you-should-use/you-should-use.plugin.zsh"
 
 # nvm
