@@ -1,3 +1,3 @@
-source "$(brew --prefix sk)/share/zsh/site-functions/key-bindings.zsh"
-source "$(brew --prefix sk)/share/zsh/site-functions/completion.zsh"
+source "/usr/local/opt/sk/share/zsh/site-functions/key-bindings.zsh"
+source "/usr/local/opt/sk/share/zsh/site-functions/completion.zsh"
 
