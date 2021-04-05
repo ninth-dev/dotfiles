@@ -1,7 +1,10 @@
+# If you want to profile you zshrc startup
+# zmodload zsh/zprof
+
 # PATH
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 PATH="${PATH}:${HOME}/.bash-my-aws/bin"
-export PATH
 
 # homebrew settings
 export HOMEBREW_NO_ANALYTICS=1
@@ -16,26 +19,30 @@ setopt autopushd
 setopt pushdignoredups
 setopt correct_all
 
-autoload colors && colors
-
 # completion paths
-[ -d "/usr/local/share/zsh-completions" ] && fpath=(/usr/local/share/zsh-completions $fpath)
+[ -d "/usr/local/share/zsh-completions" ] && fpath=(/usr/local/share/zsh-completions ${fpath[@]})
+
+## functions
+[ -d "${HOME}/zshrc.d/functions" ] && fpath=("${HOME}/zshrc.d/functions" ${fpath[@]})
+source "${HOME}/zshrc.d/function.zsh"
+
+autoload -Uz colors
+autoload -Uz promptinit && promptinit
 
 source "${HOME}/zshrc.d/aliases.zsh"
 source "${HOME}/zshrc.d/completion.zsh"
-source "${HOME}/zshrc.d/function.zsh"
 source "${HOME}/zshrc.d/keybind.zsh"
 source "${HOME}/zshrc.d/history.zsh"
 
 # zsh plugins
 source "${HOME}/zshrc.d/plugins/git.plugin.zsh"
 source "${HOME}/zshrc.d/plugins/skim.plugin.zsh"
-source "${HOME}/zshrc.d/plugins/zsh-you-should-use/you-should-use.plugin.zsh"
 
 # nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && source "/usr/local/opt/nvm/nvm.sh"
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && source "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+# note: NVM is autoloaded in functions.zsh
+NVM_DIR="$HOME/.nvm"
+NVM_PATH="/usr/local/opt/nvm/" # brew --prefix nvm
+[ -s "${NVM_PATH}/etc/bash_completion.d/nvm" ] && source "${NVM_PATH}/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # bash-my-aws
 source "${HOME}/.bash-my-aws/aliases"
@@ -45,6 +52,6 @@ source "${HOME}/.bash-my-aws/bash_completion.sh"
 [ -s "${HOME}/.zshrc.local" ] && source "${HOME}/.zshrc.local"
 
 # setup pure prompt
-autoload -U promptinit && promptinit
 prompt pure
 
+## zprof

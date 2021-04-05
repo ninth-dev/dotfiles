@@ -1,0 +1,13 @@
+#!/usr/bin/env zsh
+echo "Loading NVM.... "
+
+function _nvm_init () {
+  if [[ -n $NVM_PATH && -s "$NVM_PATH/nvm.sh"  ]]; then
+    source "$NVM_PATH/nvm.sh"
+    nvm "$@"
+  else
+    >&2 echo "Unable to load NVM. Check \$NVM_PATH."
+  fi
+}
+
+_nvm_init "$@"

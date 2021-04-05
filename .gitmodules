@@ -1,3 +1,0 @@
-[submodule "zshrc.d/plugins/zsh-you-should-use"]
-	path = zshrc.d/plugins/zsh-you-should-use
-	url = git@github.com:MichaelAquilina/zsh-you-should-use

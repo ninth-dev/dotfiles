@@ -39,12 +39,10 @@ brew install vim
 brew install git-delta
 
 # scala stuff
-brew install sbt
 brew install ammonite-repl
-brew tap coursier/formulas
-brew install coursier/formulas/coursier
+# brew tap coursier/formulas
+# brew install coursier/formulas/coursier
 
-brew cask install adobe-reader
 brew cask install brave
 brew cask install google-chrome
 brew cask install intellij-idea-ce

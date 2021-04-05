@@ -1,18 +1,18 @@
-WORDCHARS=' '  
+WORDCHARS=' '
 
+autoload -Uz compaudit compinit && compinit
+autoload -Uz bashcompinit && bashcompinit
+
+zmodload -i zsh/complist
 unsetopt menu_complete
 unsetopt flowcontrol
 setopt auto_menu         # show completion menu on successive tab press
 setopt complete_in_word
 setopt always_to_end
 
-zmodload -i zsh/complist
-autoload -U +X bashcompinit && bashcompinit
-autoload -U +X compaudit compinit && compinit
-
 # Use caching
 zstyle ':completion::complete:*' use-cache 1
-zstyle ':completion::complete:*' cache-path $ZSH_CACHE
+zstyle ':completion::complete:*' cache-path "${ZSH_CACHE}"
 
 # Enable approximate completions
 zstyle ':completion:*' completer _complete _ignored _approximate
