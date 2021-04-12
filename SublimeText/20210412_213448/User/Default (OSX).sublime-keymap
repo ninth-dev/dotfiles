@@ -1,0 +1,74 @@
+[
+  {
+    "command": "jump_back",
+    "keys": ["primary+["]
+  },
+  {
+    "command": "jump_forward",
+    "keys": ["primary+]"]
+  },
+  //  Go To Definition
+  { "keys": ["primary+shift+o"], "command": "goto_definition" },
+  {
+    "command": "lsp_symbol_definition",
+    "args": {
+      "side_by_side": false
+    },
+    "keys": ["primary+shift+o"],
+    "context": [
+      {
+        "key": "lsp.session_with_capability",
+        "operator": "equal",
+        "operand": "definitionProvider"
+      },
+      {
+        "key": "auto_complete_visible",
+        "operator": "equal",
+        "operand": false
+      }
+    ]
+  },
+  {
+    "command": "lsp_hover",
+    "keys": ["primary+shift+m"],
+    "context": [
+      {
+        "key": "lsp.session_with_capability",
+        "operator": "equal",
+        "operand": "hoverProvider"
+      }
+    ]
+  },
+  {
+    "command": "noop",
+    "keys": ["primary+shift+h"],
+    "context": [
+      {
+        "key": "lsp.signature_help",
+        "operator": "equal",
+        "operand": 0
+      }
+    ]
+  },
+  {
+    "command": "lsp_code_actions",
+    "keys": ["primary+shift+enter"],
+    "context": [
+      {
+        "key": "lsp.session_with_capability",
+        "operator": "equal",
+        "operand": "hoverProvider"
+      }
+    ]
+  },
+  {
+    "keys": ["enter"],
+    "command": "commit_completion",
+    "context": [{ "key": "auto_complete_visible" }]
+  },
+  {
+    "keys": ["tab"],
+    "command": "commit_completion",
+    "context": [{ "key": "auto_complete_visible" }]
+  }
+]

@@ -1,0 +1,12 @@
+{
+	"show_references_in_quick_panel": true,
+	"show_diagnostics_count_in_view_status": true,
+	"document_highlight_style": "",
+	"clients":
+	{
+		"metals":
+		{
+			"enabled": true,
+		},
+	},
+}
