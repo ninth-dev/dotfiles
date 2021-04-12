@@ -24,11 +24,8 @@ setopt correct_all
 
 ## functions
 [ -d "${HOME}/zshrc.d/functions" ] && fpath=("${HOME}/zshrc.d/functions" ${fpath[@]})
+
 source "${HOME}/zshrc.d/function.zsh"
-
-autoload -Uz colors
-autoload -Uz promptinit && promptinit
-
 source "${HOME}/zshrc.d/aliases.zsh"
 source "${HOME}/zshrc.d/completion.zsh"
 source "${HOME}/zshrc.d/keybind.zsh"
@@ -51,7 +48,9 @@ source "${HOME}/.bash-my-aws/bash_completion.sh"
 # source any local setup if it exists
 [ -s "${HOME}/.zshrc.local" ] && source "${HOME}/.zshrc.local"
 
-# setup pure prompt
+## pure prompt
+[ -d "${HOME}/zshrc.d/pure" ] && fpath+=("${HOME}/zshrc.d/pure")
+autoload -Uz promptinit && promptinit
 prompt pure
 
 ## zprof
