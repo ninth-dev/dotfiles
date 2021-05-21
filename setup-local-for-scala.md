@@ -9,14 +9,25 @@ Ensure Java 8 JDK (or Java 11 JDK) installed. We use AdoptOpenJDK 8/11.
 ### [sdkman](https://sdkman.io/usage) to install java
 
 1. install [sdk man](https://sdkman.io/install)
-1. install java
-
    ```sh
    ## to determine if sdk has been installed.
    sdk version
+   ```
 
+1. install java
+   ```sh
+   ## to see list of java versions
+   sdk list java
    ## install jdk8 and jdk11
    sdk install java 8.0.282.hs-adpt && sdk install java 11.0.10.hs-adpt
+   ```
+
+1. install scala
+   ```sh
+   ## to see list of scala versions
+   sdk list scala
+   ## install scala 3.0.0
+   sdk install scala 3.0.0
    ```
 
 ### [sbt](https://www.scala-sbt.org/)
@@ -24,6 +35,8 @@ Ensure Java 8 JDK (or Java 11 JDK) installed. We use AdoptOpenJDK 8/11.
 1. install sbt
    ```sh
    sdk install sbt
+   ### to check if sbt is installed
+   sbt exit
    ```
 
 ### [bloop](https://scalacenter.github.io/bloop/)
@@ -31,6 +44,9 @@ Ensure Java 8 JDK (or Java 11 JDK) installed. We use AdoptOpenJDK 8/11.
 1. install bloop
    ```sh
    brew install scalacenter/bloop/bloop
+
+   ### to check if bloop is installed
+   bloop about
    ```
 
 1. add bloop settings
@@ -64,6 +80,7 @@ Ensure Java 8 JDK (or Java 11 JDK) installed. We use AdoptOpenJDK 8/11.
 
 <details>
   <summary>Default (OSX).sublime-keymap</summary>
+
   ```json
   [
     {
@@ -139,8 +156,8 @@ Ensure Java 8 JDK (or Java 11 JDK) installed. We use AdoptOpenJDK 8/11.
       "context": [{ "key": "auto_complete_visible" }]
     }
   ]
-
   ```
+
 </details>
 
 |                     |                                |
@@ -155,6 +172,7 @@ Ensure Java 8 JDK (or Java 11 JDK) installed. We use AdoptOpenJDK 8/11.
 
 <details>
   <summary>Default (OSX).sublime-mousemap</summary>
+
   ```json
   [
     {
@@ -178,12 +196,13 @@ Ensure Java 8 JDK (or Java 11 JDK) installed. We use AdoptOpenJDK 8/11.
       "command": "jump_back"
     }
   ]
-
   ```
+
 </details>
 
 <details>
   <summary>bloop.sublime-build</summary>
+
   ```json
   {
     "selector": "source.scala",
@@ -220,6 +239,7 @@ Ensure Java 8 JDK (or Java 11 JDK) installed. We use AdoptOpenJDK 8/11.
     ]
   }
   ```
+
 </details>
 
 ## Wishlist

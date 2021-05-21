@@ -13,3 +13,6 @@ alias rg='nocorrect rg'
 alias sk='nocorrect sk'
 alias git='nocorrect git'
 alias cargo='nocorrect cargo'
+
+# rust related
+alias cargo-test-no-warning='cargo test 2>/dev/null'
