@@ -15,8 +15,6 @@ alias git='nocorrect git'
 
 # rust
 alias cargo='nocorrect cargo'
-
-# rust related
 alias cargo-test-no-warning='cargo test 2>/dev/null'
 
 # scala
