@@ -1,9 +1,9 @@
 #!/bin/bash
 set -euo pipefail
 
-# source_dir="$HOME/Library/Application Support/Sublime Text 3/Packages/User"
 source_dir="$HOME/Library/Application Support/Sublime Text/Packages/User"
-destination_dir="SublimeText/$(date +"%Y%m%d_%H%M%S")"
+now=$(date +"%Y%m%d_%H%M%S")
+destination_dir="SublimeText/${now}"
 
 # make a folder with today's date in SublimeText folder
 mkdir -p "$destination_dir"
@@ -11,6 +11,11 @@ mkdir -p "$destination_dir"
 # copy Packages/User/
 rsync -rP "$source_dir" "$destination_dir/"
 
-# move into there
+if [[ -L "SublimeText/latest" ]]; then
+  unlink "SublimeText/latest"
+fi
+
+ln -s "$now" "SublimeText/latest"
+
 echo "┬─┬ノ( º _ ºノ) - DONE"
 
