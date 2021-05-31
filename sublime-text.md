@@ -10,23 +10,28 @@ ln -sv "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/loc
 
 [Default (OSX).sublime-keymap](./SublimeText/latest/User/Default (OSX).sublime-keymap)
 
-Command (or Cmd) ⌘
-Shift ⇧
-Option (or Alt) ⌥
-Control (or Ctrl) ⌃
-Caps Lock ⇪
-Fn
+Notes:
+
+- Disable macOS key binding ( System Preferences > Keyboard > Shortcuts > Spotlight > Uncheck Show Finder search window )
+- Will replace Sublime default features if LSP works.
 
 |                                            |                                |
 | ------------------------------------------ | ------------------------------ |
 | `⌃ Ctrl` + `-`                             | Jump Back                      |
 | `⌃ Ctrl` + `⇧ Shift` + `-`                 | Jump Forward                   |
 | `⌘ Command` + `⌥ Option` + `↓`             | Go to Definition               |
-| `⌘ Command` + `⌥ Option` + `⇧ Shift` + `↓` | Go to Reference                |
-| `⌘ Command` + `⇧ Shift` + `h`              | Signature Help                 |
-| `⌘ Command` + `⇧ Shift` + `m`              | Hover                          |
+| `⌘ Command` + `⌥ Option` + `⇧ Shift` + `↓` | Find References                |
+| `⌘ Command` + `⌥ Option` + `Space`         | Signature Help                 |
+| `⌘ Command` + `⌘ Command`                  | Hover                          |
 | `⌘ Command` + `⏎ Enter`                    | Code Actions                   |
 | `⌘ Command` + `⇧ Shift` + `e`              | Toggle Between Source and Test |
+
+|                                            |                                |
+| ------------------------------------------ | ------------------------------ |
+| `⌘ Command` + `b`                          | Build                          |
+| `⌘ Command` + `⇧ Shift` + `b`              | Build Variants                 |
+| `F4`                                       | Next Results                   |
+| `⇧ Shift` + `F4`                           | Prev Results                   |
 
 [Default (OSX).sublime-mousemap](./SublimeText/latest/User/Default (OSX).sublime-mousemap)
 
@@ -51,5 +56,6 @@ Fn
 
 ## To learn
 
-- How to organise imports
-- Remove unused Imports
+- How to organise imports ( ScalaFmt ? )
+- Remove unused imports
+- Format Code
