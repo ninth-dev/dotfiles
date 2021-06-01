@@ -69,10 +69,3 @@ Ensure Java 8 JDK (or Java 11 JDK) installed. We use AdoptOpenJDK 8/11.
    ## alternatively use [Scastie](https://scastie.scala-lang.org/)
    brew install ammonite-repl
    ```
-
-### Setting up Sublime Text
-
-1. install `LSP` package
-1. install `LSP-metals` package
-1. install `Scoggle` package
-

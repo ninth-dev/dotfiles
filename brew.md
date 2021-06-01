@@ -46,7 +46,6 @@ brew install ammonite-repl
 brew cask install brave
 brew cask install google-chrome
 brew cask install intellij-idea-ce
-brew cask install java
 brew cask install spotify
 
 brew cask install tableplus

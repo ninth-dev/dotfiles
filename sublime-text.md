@@ -1,14 +1,14 @@
 # Sublime Text
 
-### Symlink to `subl`
+### Installation
+
+[SublimeText settings](https://github.com/ninth-dev/SublimeText)
 
 ```sh
 ln -sv "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
 ```
 
 ### Sublime Keybindings
-
-[Default (OSX).sublime-keymap](./SublimeText/latest/User/Default (OSX).sublime-keymap)
 
 Notes:
 
@@ -53,9 +53,3 @@ Notes:
   }
 ]
 ```
-
-## To learn
-
-- How to organise imports ( ScalaFmt ? )
-- Remove unused imports
-- Format Code
