@@ -10,26 +10,21 @@ ln -sv "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/loc
 
 ### Sublime Keybindings
 
-Notes:
-
-- Disable macOS key binding ( System Preferences > Keyboard > Shortcuts > Spotlight > Uncheck Show Finder search window )
-- Will replace Sublime default features if LSP works.
-
 |                                            |                                |
 | ------------------------------------------ | ------------------------------ |
-| `⌃ Ctrl` + `-`                             | Jump Back                      |
-| `⌃ Ctrl` + `⇧ Shift` + `-`                 | Jump Forward                   |
+| `⌘ Command` + `[`                          | Jump Back                      |
+| `⌘ Command` + `]`                          | Jump Forward                   |
 | `⌘ Command` + `⌥ Option` + `↓`             | Go to Definition               |
 | `⌘ Command` + `⌥ Option` + `⇧ Shift` + `↓` | Find References                |
-| `⌘ Command` + `⌥ Option` + `Space`         | Signature Help                 |
+| `⌘ Command` + `⇧ Shift` + `H`              | Signature Help                 |
 | `⌘ Command` + `⌘ Command`                  | Hover                          |
 | `⌘ Command` + `⏎ Enter`                    | Code Actions                   |
-| `⌘ Command` + `⇧ Shift` + `e`              | Toggle Between Source and Test |
+| `⌘ Command` + `⇧ Shift` + `E`              | Toggle Between Source and Test |
 
 |                                            |                                |
 | ------------------------------------------ | ------------------------------ |
-| `⌘ Command` + `b`                          | Build                          |
-| `⌘ Command` + `⇧ Shift` + `b`              | Build Variants                 |
+| `⌘ Command` + `B`                          | Build                          |
+| `⌘ Command` + `⇧ Shift` + `B`              | Build Variants                 |
 | `F4`                                       | Next Results                   |
 | `⇧ Shift` + `F4`                           | Prev Results                   |
 

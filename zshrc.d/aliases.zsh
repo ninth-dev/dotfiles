@@ -17,5 +17,15 @@ alias git='nocorrect git'
 alias cargo='nocorrect cargo'
 alias cargo-test-no-warning='cargo test 2>/dev/null'
 
+# sdk
+alias sdk='nocorrect sdk'
+
 # scala
 alias bloop='nocorrect bloop'
+alias sbt='nocorrect sbt'
+
+# sublime text pkgs
+alias subl-pkg='cd "${HOME}/Library/Application Support/Sublime Text/Packages/User"'
+
+# helpers
+alias uuid="uuidgen | tr '[:upper:]' '[:lower:]' | tee /dev/tty | tr -d '\n' | pbcopy"

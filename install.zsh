@@ -1,7 +1,7 @@
 dotfile_path="$(cd "$(dirname "$0")" && pwd -P)"
 
 # create zshrc.d and sync up
-mkdir -P "${HOME}/zshrc.d"
+mkdir -p "${HOME}/zshrc.d"
 
 rsync                                   \
   --recursive                           \

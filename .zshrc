@@ -54,3 +54,4 @@ autoload -Uz promptinit && promptinit
 prompt pure
 
 ## zprof
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
