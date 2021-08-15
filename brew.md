@@ -21,11 +21,8 @@ echo '/usr/local/bin/zsh' | sudo tee -a /etc/shells;
 chsh -s /usr/local/bin/zsh
 
 brew cask install homebrew/cask-versions/firefox-developer-edition
-brew cask install firefox
 
 brew install nvm
-brew install node
-brew install yarn
 
 brew install awscli
 brew install bat
@@ -38,11 +35,6 @@ brew install tree
 brew install vim
 brew install git-delta
 
-# scala stuff
-brew install ammonite-repl
-# brew tap coursier/formulas
-# brew install coursier/formulas/coursier
-
 brew cask install brave
 brew cask install google-chrome
 brew cask install intellij-idea-ce
@@ -50,7 +42,6 @@ brew cask install spotify
 
 brew cask install tableplus
 brew cask install typora
-brew cask install visual-studio-code
 brew cask install whatsapp
 
 ```

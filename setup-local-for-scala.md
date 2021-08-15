@@ -2,70 +2,100 @@
 
 Instructions on how I like to setup my local environment for Scala.
 
-## Getting started
+## Use couriser
 
-Ensure Java 8 JDK (or Java 11 JDK) installed. We use AdoptOpenJDK 8/11.
+```bash
+curl -fLo cs https://git.io/coursier-cli-"$(uname | tr LD ld)"
+chmod +x cs
+./cs setup --yes --jvm 11 --apps ammonite,bloop,cs,giter8,sbt,scala,scalafmt
+rm cs
+```
 
-### [sdkman](https://sdkman.io/usage) to install java
+This will install:
 
-1. install [sdk man](https://sdkman.io/install)
-   ```sh
-   ## to determine if sdk has been installed.
-   sdk version
-   ```
+- [sbt](https://www.scala-sbt.org/)
+- [Ammonite-REPL](https://ammonite.io/#Ammonite-REPL)
+- [giter8]
+- [scala]
 
-1. install java
-   ```sh
-   ## to see list of java versions
-   sdk list java
-   ## install jdk8 and jdk11
-   sdk install java 8.0.282.hs-adpt && sdk install java 11.0.10.hs-adpt
-   ```
+### Setup autocompletion
 
-1. install scala
-   ```sh
-   ## to see list of scala versions
-   sdk list scala
-   ## install scala 3.0.0
-   sdk install scala 3.0.0
-   ```
+```bash
+cs --completions zsh > /usr/local/share/zsh/site-functions/_cs
+```
 
-### [sbt](https://www.scala-sbt.org/)
+### How to switch version of Java
 
-1. install sbt
-   ```sh
-   sdk install sbt
-   ### to check if sbt is installed
-   sbt exit
-   ```
+```bash
+cs java --jvm 11 --setup
+cs java --jvm 8 --setup
+```
+
+### Enable Graal (JDK 10+)
+
+NB: Doesn't work currently Apple M1
+
+- `java --list-modules -version | rg jdk.internal.vm.compiler`
+- `export JAVA_TOOL_OPTIONS="-XX:+UnlockExperimentalVMOptions -XX:+UseJVMCICompiler"`
+
+XXX - check if this is required for graalvm
 
 ### [bloop](https://scalacenter.github.io/bloop/)
 
-1. install bloop
-   ```sh
-   brew install scalacenter/bloop/bloop
+1. add bloop tab completion for zsh
 
-   ### to check if bloop is installed
-   bloop about
-   ```
+```
+curl -L https://github.com/scalacenter/bloop/releases/download/v1.4.8/zsh-completions -o "$HOME/.bloop/zsh-completions"
+ln -s "$HOME/.bloop/zsh-completions" /usr/local/share/zsh/site-functions/_bloop
+```
+
+1. use graal vm instead since it should be faster
+
+```
+cs java --jvm graalvm-java11:21.0.0 --env
+```
 
 1. add bloop settings
-   ```sh
-   mkdir -p $HOME/.bloop
-   {
-    echo "{"
-    echo '  "javaHome": "/Users/justin.lam/.sdkman/candidates/java/current",'
-    echo '  "javaOptions": ["-XX:+UseParallelGC"]'
-    echo "}"
-   } > $HOME/.bloop/bloop.json
-   ```
 
-### [Ammonite-REPL](https://ammonite.io/#Ammonite-REPL)
+```sh
+mkdir -p $HOME/.bloop
+cat <<EOF > $HOME/.bloop/bloop.json
+{
+  "javaHome": "???" // output of the above command
+  "javaOptions": ["-XX:+UseParallelGC", "-XX:+UnlockExperimentalVMOptions", "-XX:+UseJVMCICompiler"]
+}
+EOF
+```
 
-1. install amm
+### scalafmt-native
 
-   ```sh
-   ## install a scala repl - ammonite-repl
-   ## alternatively use [Scastie](https://scastie.scala-lang.org/)
-   brew install ammonite-repl
-   ```
+Use `scalafmt-native` for integration with [sublime-fmt](https://github.com/mitranim/sublime-fmt)
+
+Using a [scalafmt-native-launcher](./scalafmt-native-launcher.sh).
+
+```bash
+ln -s /usr/local/bin/scalafmt-native ./scalafmt-native-launcher.sh
+mkdir -p "$HOME/.scalafmt-native"
+```
+
+Sublime FMT settings
+
+```json
+{
+  "rules": [
+    {
+      "selector": "source.scala",
+      "cmd": ["scalafmt-native", "--stdin"],
+    }
+  ],
+  "cwd_mode": "project_root",
+  "format_on_save": true
+}
+```
+
+
+
+
+
+
+
