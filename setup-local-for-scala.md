@@ -74,7 +74,7 @@ Use `scalafmt-native` for integration with [sublime-fmt](https://github.com/mitr
 Using a [scalafmt-native-launcher](./scalafmt-native-launcher.sh).
 
 ```bash
-ln -s /usr/local/bin/scalafmt-native ./scalafmt-native-launcher.sh
+ln -s ./scalafmt-native-launcher.sh /usr/local/bin/scalafmt-native
 mkdir -p "$HOME/.scalafmt-native"
 ```
 
