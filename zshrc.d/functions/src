@@ -1,14 +1,31 @@
 # shortcut to my src files
-function src(){
-  local filter="$*"
-  builtin cd "$(
-    fd --max-depth=1 --hidden --type d . "$HOME/Documents/src" --exec basename {} \
-      | rg "${filter}" \
-      | (echo "." && cat) \
-      | sort --reverse \
-      | sk \
-      | xargs -I{} echo "$HOME/Documents/src/{}" \
-    )" || return
+function src () {
+  local filter
+  local search_path
+  local dest_path="${HOME}/Documents/src"
+
+  if [[ "${@}" == "zzz" ]]; then
+    search_path="${dest_path}/zzz"
+    shift
+  else
+    search_path="${dest_path}"
+  fi
+
+  filter="${@}"
+
+  if [[ "${filter}" == "." ]]; then
+    builtin cd "${search_path}"
+  else
+    builtin cd "$(
+      fd --max-depth=1 --hidden --type d . "${search_path}" --exec basename {} \
+        | rg "${filter}" \
+        | rg -v "zzz" \
+        | (echo "." && cat) \
+        | sort --reverse \
+        | sk \
+        | xargs -I{} echo "${search_path}/{}" \
+      )" || return
+  fi
 }
 
 src "${@}"
