@@ -74,7 +74,7 @@ Use `scalafmt-native` for integration with [sublime-fmt](https://github.com/mitr
 Using a [scalafmt-native-launcher](./scalafmt-native-launcher.sh).
 
 ```bash
-ln -s ./scalafmt-native-launcher.sh /usr/local/bin/scalafmt-native
+ln -s "${PWD}/scalafmt-native-launcher.sh" /usr/local/bin/scalafmt-native
 mkdir -p "$HOME/.scalafmt-native"
 ```
 
@@ -85,12 +85,20 @@ Sublime FMT settings
   "rules": [
     {
       "selector": "source.scala",
-      "cmd": ["scalafmt-native", "--stdin"],
+      "cmd": [
+        "scalafmt-native",
+        "--stdin",
+        "--assume-filename",
+        "$file_name",
+        "--stdout",
+        "--non-interactive"
+       ],
     }
   ],
   "cwd_mode": "project_root",
   "format_on_save": true
 }
+
 ```
 
 
