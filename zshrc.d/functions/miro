@@ -1,0 +1,10 @@
+function miro () {
+  if echo $@ | grep -q 'https://miro.com/'; then
+    local url=$(echo $@ | sed -e s'/^https/miroapp/g')
+    open "${url}"
+  else
+    return 1
+  fi
+}
+
+miro "$@"

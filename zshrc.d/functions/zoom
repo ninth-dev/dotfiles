@@ -1,0 +1,13 @@
+function zoom () {
+  if [[ "$1" == "" ]]; then
+    echo "I need a number to call, eg. 'zoom XXX-XXX-XXX'."
+    return 1
+  elif echo "$@" | grep -q 'https://'; then
+    local data=$(echo "$@" | sed -e 's@^https://.*/j/@@g' | sed -e 's@?pwd=@\&pwd=@g')
+    open "zoomtg://zoom.us/join?action=join%confno=${@}&browser=firefox&zc=0"
+  else
+    open "zoomtg://zoom.us/join?action=join&confono=${@//[^0-9]}&browser=firefox&zc=0"
+  fi
+}
+
+zoom "$@"
