@@ -1,5 +1,5 @@
-alias ls='ls --color=always'
-alias ll='ls -lhrt'
+alias ls='ls -G'
+alias ll='ls -Glhrt'
 alias amm='amm --no-remote-logging'
 
 # nocorrect for certain commands

@@ -2,16 +2,18 @@
 # zmodload zsh/zprof
 
 # PATH
-PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
-PATH="${PATH}:${HOME}/.bash-my-aws/bin"
+
+# XXX - reconsider using gnu coreutils
+# PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+# PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+# PATH="${PATH}:${HOME}/.bash-my-aws/bin"
 
 # homebrew settings
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_GITHUB_API=1
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_INSECURE_REDIRECT=1
-export HOMEBREW_CASK_OPTS=--require-sha
+# export HOMEBREW_CASK_OPTS=--require-sha
 
 setopt extended_glob
 setopt auto_cd
@@ -54,4 +56,3 @@ autoload -Uz promptinit && promptinit
 prompt pure
 
 ## zprof
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
