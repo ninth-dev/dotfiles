@@ -45,6 +45,8 @@ XXX - check if this is required for graalvm
 1. add bloop tab completion for zsh
 
 ```
+# https://github.com/scalacenter/bloop/releases
+mkdir -p "$HOME/.bloop"
 curl -L https://github.com/scalacenter/bloop/releases/download/v1.4.11/zsh-completions -o "$HOME/.bloop/zsh-completions"
 ln -s "$HOME/.bloop/zsh-completions" /usr/local/share/zsh/site-functions/_bloop
 ```
