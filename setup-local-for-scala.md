@@ -80,6 +80,18 @@ ln -s "${PWD}/scalafmt-native-launcher.sh" /usr/local/bin/scalafmt-native
 mkdir -p "$HOME/.scalafmt-native"
 ```
 
+### bloop-which-project
+
+Uses `bloop` to determine which project your Scala file belongs in
+
+```bash
+ln -s "${PWD}/bloop-which-project.sh" /usr/local/bin/bloop-which-project
+```
+
+This is used in conjuction with the [`bloop.sublime-build`](https://github.com/ninth-dev/SublimeText/blob/master/bloop.sublime-build)
+
+---
+
 Sublime FMT settings
 
 ```json
