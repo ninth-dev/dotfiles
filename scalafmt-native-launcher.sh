@@ -13,7 +13,7 @@ fi
 # extract the version of scalafmt
 version=$(
   sed -E "s/(\/\/|#).*//g" ${scalafmt_config} \
-  | grep "version" \
+  | rg "version" \
   | sed -E "s/version|=|\"|\s*//g" \
   | xargs
 )

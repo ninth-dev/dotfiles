@@ -10,8 +10,9 @@ alias mv='nocorrect mv'
 alias sudo='nocorrect sudo'
 alias fd='nocorrect fd'
 alias rg='nocorrect rg'
-alias sk='nocorrect sk'
 alias git='nocorrect git'
+alias bundle='nocorrect bundle'
+alias kubectl="nocorrect kubectl"
 
 # rust
 alias cargo='nocorrect cargo'
@@ -29,3 +30,4 @@ alias subl-pkg='cd "${HOME}/Library/Application Support/Sublime Text/Packages/Us
 
 # helpers
 alias uuid="uuidgen | tr '[:upper:]' '[:lower:]' | tee /dev/tty | tr -d '\n' | pbcopy"
+alias gafzf="git add $(fzf-git-files-widget)"

@@ -22,7 +22,7 @@ function src () {
         | rg -v "zzz" \
         | (echo "." && cat) \
         | sort --reverse \
-        | sk \
+        | fzf \
         | xargs -I{} echo "${search_path}/{}" \
       )" || return
   fi
