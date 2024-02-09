@@ -2,7 +2,12 @@
 function src () {
   local filter
   local search_path
-  local dest_path="${HOME}/Documents/src"
+  local dest_path="$SRC_DEFAULT_SEARCH_PATH"
+
+  if [[ -v SRC_P_SEARCH_PATH && "${1}" == "p" ]]; then
+    dest_path="$SRC_P_SEARCH_PATH"
+    shift
+  fi
 
   if [[ "${@}" == "zzz" ]]; then
     search_path="${dest_path}/zzz"

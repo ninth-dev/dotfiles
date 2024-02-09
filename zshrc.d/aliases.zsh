@@ -30,4 +30,3 @@ alias subl-pkg='cd "${HOME}/Library/Application Support/Sublime Text/Packages/Us
 
 # helpers
 alias uuid="uuidgen | tr '[:upper:]' '[:lower:]' | tee /dev/tty | tr -d '\n' | pbcopy"
-alias gafzf="git add $(fzf-git-files-widget)"
