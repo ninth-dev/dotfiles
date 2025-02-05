@@ -12,3 +12,29 @@ function git_current_branch() {
   fi
   echo ${ref#refs/heads/}
 }
+
+function git_previous_branch() {
+  local previous_branch
+  previous_branch=$(__git_prompt_git reflog 2> /dev/null | rg ".*checkout: moving from (.*) to $(git_current_branch)" -r '$1' -m 1)
+  local ret=$?
+  if [[ $ret != 0 ]]; then
+    [[ $ret == 128 ]] && return  # no git repo.
+  fi
+  echo $previous_branch
+}
+
+function glrb() {
+  if [[ "$#" != 0 ]]; then
+    command git switch "${*}"
+    ggl
+    command git switch "$(git_previous_branch)"
+    command git rebase "${*}"
+  else
+    return
+  fi
+}
+
+alias glrbm='glrb $(git_main_branch)'
+alias gsw!='git switch $(git_previous_branch)'
+alias glom='git log --oneline --decorate --max-count=10'
+
