@@ -34,7 +34,7 @@ brew install vim
 brew install git-delta
 
 brew install fzf
-/opt/homebrew/opt/fzf/install
+"$(brew --prefix)/opt/fzf/install"
 
 brew install --cask docker
 
