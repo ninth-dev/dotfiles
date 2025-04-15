@@ -24,15 +24,6 @@ for project in ${projects[*]}; do
       echo $project_name
       exit 0
     fi
-    # check if the path exists
-    # if [[ -d "$src" ]]; then
-      ## check if the file exists in the path
-      # file_found="$(fd --full-path "$file" "$src" | wc -l)"
-      # if [[ "$file_found" -eq 1 ]]; then
-      #   echo $project_name
-      #   exit 0
-      # fi
-    # fi
   done
 done
 
